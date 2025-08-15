@@ -46,9 +46,7 @@ function prefab(prefabName, design) {
             }
 
             if ("classes" in element) {
-                for (let Class of element.classes) {
-                    Part.classList.add(Class);
-                }
+                Part.classList.add(...element.classes);
             }
 
             if ("id" in element) {
