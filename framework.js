@@ -1,3 +1,33 @@
+/* 
+Example:
+<body>
+    <examplePrefab></examplePrefab>
+</body>
+
+<script defer>
+    prefab("examplePrefab", [
+        {
+            Name: "h1",
+            text: "Example",
+            classes: [
+                "exClassA",
+                "exClassB",
+            ],
+            id: "exIdA"
+        },
+        {
+            Name: "img",
+            src: "exampleImg.png"
+            alt: "exampleAlt"
+            classes: [
+                "exClassC"
+            ],
+            id: "exIdB"
+        }
+    ])
+</script>
+*/
+
 function prefab(prefabName, design) {
     const prefabs = document.querySelectorAll(prefabName);
     for (let prefab of prefabs) {
