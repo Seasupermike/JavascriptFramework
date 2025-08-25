@@ -45,15 +45,17 @@ function prefab(prefabName, design) {
                 Part.alt = element.alt
             }
 
-            if ("classes" in element) {
-                Part.classList.add(...element.classes);
-            }
-
-            if ("id" in element) {
-                Part.id = element.id
-            }
+            Part.classList.add(...element.classes);
 
             prefab.appendChild(Part)
         }
     }
+}
+
+function removeDuplicates(array) {
+    const dict = new Map();
+    for (let element of array) {
+        dict.set(element);
+    }
+    return dict.keys().toArray();
 }
