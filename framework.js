@@ -12,8 +12,7 @@ Example:
             classes: [
                 "exClassA",
                 "exClassB",
-            ],
-            id: "exIdA"
+            ]
         },
         {
             Name: "img",
@@ -21,8 +20,7 @@ Example:
             alt: "exampleAlt"
             classes: [
                 "exClassC"
-            ],
-            id: "exIdB"
+            ]
         }
     ])
 </script>
