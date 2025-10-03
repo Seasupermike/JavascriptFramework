@@ -72,4 +72,4 @@ Number.prototype.isMultiple = function quadratic(a, b, c) {
     if (temp < 0) return `x = ${-b} +- sqrt(${temp})`
     temp = Math.sqrt(temp)
     return `x = { ${((-b) + temp) / (2 * a)}, ${((-b) - temp) / (2 * a)} }`
-  }
+}
