@@ -66,3 +66,10 @@ Number.prototype.isMultiple = function (num, multiple) {
     return num % multiple == 0
   }
 }
+
+Number.prototype.isMultiple = function quadratic(a, b, c) {
+    let temp = (b * b) - (4 * a * c)
+    if (temp < 0) return `x = ${-b} +- sqrt(${temp})`
+    temp = Math.sqrt(temp)
+    return `x = { ${((-b) + temp) / (2 * a)}, ${((-b) - temp) / (2 * a)} }`
+  }
