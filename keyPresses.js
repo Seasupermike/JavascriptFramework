@@ -37,10 +37,10 @@
   for (let i = 32; i <= 126; i++) {
     keypresses[String.fromCharCode(i)] = createKey();
   }
-  let bonus = ["any", "shift", "control", "alt", "tab", "enter", "backspace", "escape", "space"]
-  for (let i = 0; i < bonus.length; i++) {
-      keypresses[bonus[i]] = createKey()
-  }
+  ["any", "shift", "control", "alt", "tab", "enter", "backspace", "escape", "space"]
+  .forEach(function (e) {
+    keypresses[e] = createkey()
+  })
   
   function onDown(event) {
     if (keypresses[event.key] == undefined) {
