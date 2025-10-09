@@ -1,8 +1,8 @@
-Number.prototype.isEven = function (num) {
+function isEven(num) {
     return (!Number.isInteger(Number(num))) ? false : (String(num).slice(-1) % 2 == 0)
 }
 
-Number.prototype.powerOf = function (num, power) {
+function powerOf(num, power) {
     let isInt = num
 
     if (isNaN(num) == false && isNaN(power) == false) {
@@ -16,15 +16,15 @@ Number.prototype.powerOf = function (num, power) {
     }
 }
 
-Number.prototype.CountDigits = function (num) {
+function countDigits(num) {
     return String(num).length
 }
 
-Number.prototype.PercentOf = function (num, percent) {
+function percentOf(num, percent) {
       return (num * 100) / percent
 }
 
-Number.prototype.average = function () {
+function average() {
     let sum = 0;
     let flattend = [...arguments].flat(Infinity);
     for (let i = 0; i < flattend.length; i++) {
@@ -35,7 +35,7 @@ Number.prototype.average = function () {
     return sum / flattend.length
 }
 
-Number.prototype.factorial = function (num) {
+function factorial(num) {
     let isInt = num
     for (let i = 1; num - i > 0; i++) {
       isInt *= num - i
@@ -47,14 +47,14 @@ Number.prototype.factorial = function (num) {
     return isInt
 }
 
-Number.prototype.getRandom = function (min, max, isInt) {
+function getRandom(min, max, isInt) {
     min = Math.ceil(min);
     max = Math.floor(max);
     let isInt = (Math.random() * (max - min + 1)) + min;
     return (isInt == true) ? Math.round(isInt) : isInt
 }
-  
-Number.prototype.randomChance = function (chance) {
+
+function randomChance(chance) {
     if (getRandom(0, 100) <= chance) {
       return true;
     }
@@ -62,12 +62,12 @@ Number.prototype.randomChance = function (chance) {
     return false;
 }
   
-Number.prototype.isMultiple = function (num, multiple) {
+function isMultiple(num, multiple) {
     return num % multiple == 0
   }
 }
 
-Number.prototype.isMultiple = function quadratic(a, b, c) {
+function quadratic(a, b, c) {
     let temp = (b * b) - (4 * a * c)
     if (temp < 0) return `x = ${-b} +- sqrt(${temp})`
     temp = Math.sqrt(temp)
