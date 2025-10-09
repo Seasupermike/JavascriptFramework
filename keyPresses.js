@@ -46,7 +46,7 @@
     if (keypresses[event.key] == undefined) {
       console.log(event.key)
     }
-    let k = (event.key == " ") ? "space" : event.key
+    let k = (event.key == " ") ? "space" : event.key.toLowerCase()
     keypresses[k].down();
     keypresses.any.down(k)
   }
