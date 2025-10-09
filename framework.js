@@ -7,7 +7,7 @@ Example:
 <script defer>
     prefab("examplePrefab", [
         {
-            Name: "h1",
+            name: "h1",
             text: "Example",
             classes: [
                 "exClassA",
@@ -15,7 +15,7 @@ Example:
             ]
         },
         {
-            Name: "img",
+            name: "img",
             src: "exampleImg.png"
             alt: "exampleAlt"
             classes: [
@@ -28,9 +28,10 @@ Example:
 
 function prefab(prefabName, design) {
     const prefabs = document.querySelectorAll(prefabName);
+    if (prefabs.length == 0) return false
     for (let prefab of prefabs) {
         for (let element of design) {
-            let Part = document.createElement(element.Name);
+            let Part = document.createElement(element.name);
             if ("textContent" in Part && "text" in element) {
                 Part.textContent = element.text
             }
@@ -48,20 +49,24 @@ function prefab(prefabName, design) {
             prefab.appendChild(Part)
         }
     }
+    return true
 }
 
 function removeDuplicates(array) {
-    const dict = new Map();
-    for (let element of array) {
-        dict.set(element);
-    }
-    return dict.keys().toArray();
+    return new Set(array).values().toArray()
 }
-
 
 async function delay(time) {
   return new Promise((resolve) => {
     setTimeout(resolve, time)
+  })
+}
+
+async function until(condition) {
+  return new Promise((resolve) => {
+    setInterval(function () {
+      if (condition()) resolve()
+    })
   })
 }
 
