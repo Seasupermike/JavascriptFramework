@@ -3,11 +3,9 @@ Object.defineProperty(globalThis, "Input", {
     value: (function () {
         class Key {
             #onPressFuncs;
-            #onHeldFuncs;
             #onReleaseFuncs
             constructor() {
                 this.#onPressFuncs = new Set();
-                this.#onHeldFuncs = new Set();
                 this.#onReleaseFuncs = new Set();
                 this.pressed = false;
             }
