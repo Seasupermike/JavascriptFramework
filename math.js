@@ -24,15 +24,13 @@ function percentOf(num, percent) {
       return (num * 100) / percent
 }
 
-function average() {
+function average(...nums) {
     let sum = 0;
-    let flattend = [...arguments].flat(Infinity);
-    for (let i = 0; i < flattend.length; i++) {
-        sum += Number(flattend[i])
-        numbersCount += 1
+    for (let num of nums) {
+        sum += Number(num)
     }
     
-    return sum / flattend.length
+    return sum / nums.length
 }
 
 function factorial(num) {
@@ -58,7 +56,6 @@ function randomChance(chance) {
     if (getRandom(0, 100) <= chance) {
       return true;
     }
-    
     return false;
 }
   
