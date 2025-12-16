@@ -1,8 +1,8 @@
-function isEven(num) {
+export const isEven = function (num) {
     return (!Number.isInteger(Number(num))) ? false : (String(num).slice(-1) % 2 == 0)
 }
 
-function powerOf(num, power) {
+export const powerOf = function (num, power) {
     let isInt = num
 
     if (isNaN(num) == false && isNaN(power) == false) {
@@ -16,15 +16,15 @@ function powerOf(num, power) {
     }
 }
 
-function countDigits(num) {
+export const countDigits = function (num) {
     return String(num).length
 }
 
-function percentOf(num, percent) {
+export const percentOf = function (num, percent) {
       return (num * 100) / percent
 }
 
-function average(...nums) {
+export const average = function (...nums) {
     let sum = 0;
     for (let num of nums) {
         sum += Number(num)
@@ -33,7 +33,7 @@ function average(...nums) {
     return sum / nums.length
 }
 
-function factorial(num) {
+export const factorial = function (num) {
     let isInt = num
     for (let i = 1; num - i > 0; i++) {
       isInt *= num - i
@@ -45,26 +45,26 @@ function factorial(num) {
     return isInt
 }
 
-function getRandom(min, max, isInt) {
+export const getRandom = function (min = 0, max = 0, isInt = false) {
     min = Math.ceil(min);
     max = Math.floor(max);
     let isInt = (Math.random() * (max - min + 1)) + min;
     return (isInt == true) ? Math.round(isInt) : isInt
 }
 
-function randomChance(chance) {
+export const randomChance = function (chance) {
     if (getRandom(0, 100) <= chance) {
       return true;
     }
     return false;
 }
   
-function isMultiple(num, multiple) {
+export const isMultiple = function (num, multiple) {
     return num % multiple == 0
   }
 }
 
-function quadratic(a, b, c) {
+export const quadratic = function (a, b, c) {
     let temp = (b * b) - (4 * a * c)
     if (temp < 0) return `x = ${-b} +- sqrt(${temp})`
     temp = Math.sqrt(temp)
