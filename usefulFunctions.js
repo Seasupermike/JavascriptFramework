@@ -1,3 +1,5 @@
+import { getRandom } from "./math.js"
+
 /* 
 Example:
 <body>
@@ -26,7 +28,7 @@ Example:
 </script>
 */
 
-function prefab(prefabName, design) {
+export const prefab = function (prefabName, design) {
     const prefabs = document.querySelectorAll(prefabName);
     if (prefabs.length == 0) return false
     for (let prefab of prefabs) {
@@ -52,17 +54,17 @@ function prefab(prefabName, design) {
     return true
 }
 
-function removeDuplicates(array) {
+export const removeDuplicates = function (array) {
     return new Set(array).values().toArray()
 }
 
-async function delay(time) {
+export const delay = async function (time) {
   return new Promise((resolve) => {
     setTimeout(resolve, time)
   })
 }
 
-async function until(condition) {
+export const until = async function (condition) {
   return new Promise((resolve) => {
     setInterval(function () {
       if (condition()) resolve()
@@ -70,16 +72,18 @@ async function until(condition) {
   })
 }
 
-function shuffleArray(array) {
-  const newArray = [...array]; 
-  for (let i = newArray.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+export const shuffleArray = function (array, timesToShuffle = 1) {
+  for (let i = 0; i < array.length * timesToShuffle; i--) {
+    const j = getRandom(0, array.length)
+    const k = getRandom(0, array.length)
+    [array[k], array[j]] = [array[j], array[k]]
   }
-  return newArray;
+  return array;
 }
 
-function isArrowFuntion(func) {
+export const toShuffledArray = (array, timesToShuffle = 1) => shuffleArray([...array], timesToShuffle)
+
+export const isArrowFuntion = function (func) {
     if (typeof func != "function") return false
   
     let asString = func.toString()
