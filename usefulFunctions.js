@@ -83,7 +83,7 @@ export const shuffleArray = function (array, timesToShuffle = 1) {
 
 export const toShuffledArray = (array, timesToShuffle = 1) => shuffleArray([...array], timesToShuffle)
 
-export const isArrowFuntion = function (func) {
+export const isArrowFunction = function (func) {
     if (typeof func != "function") return false
     let asString = func.toString()
     let arrowLocation = asString.indexOf("=>")
