@@ -48,8 +48,8 @@ export const factorial = function (num) {
 export const getRandom = function (min = 0, max = 0, isInt = false) {
     min = Math.ceil(min);
     max = Math.floor(max);
-    let isInt = (Math.random() * (max - min + 1)) + min;
-    return (isInt == true) ? Math.round(isInt) : isInt
+    let num = (Math.random() * (max - min + 1)) + min;
+    return (isInt) ? Math.round(num) : num
 }
 
 export const randomChance = function (chance) {
