@@ -88,7 +88,7 @@ export const isArrowFunction = function (func) {
     let asString = func.toString()
     let arrowLocation = asString.indexOf("=>", 2)
     if (arrowLocation == -1) return false
-    let bracketLocation = asString.indexOf("{", arrowLocation + 1)
+    let bracketLocation = asString.indexOf("{", 3)
     if (bracketLocation == -1) return true
     return (arrowLocation < bracketLocation)
 }
