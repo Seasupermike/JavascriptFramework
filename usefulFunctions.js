@@ -86,9 +86,9 @@ export const toShuffledArray = (array, timesToShuffle = 1) => shuffleArray([...a
 export const isArrowFunction = function (func) {
     if (typeof func != "function") return false
     let asString = func.toString()
-    let arrowLocation = asString.indexOf("=>")
+    let arrowLocation = asString.indexOf("=>", 2)
     if (arrowLocation == -1) return false
-    let bracketLocation = asString.indexOf("{")
+    let bracketLocation = asString.indexOf("{", arrowLocation + 1)
     if (bracketLocation == -1) return true
     return (arrowLocation < bracketLocation)
 }
